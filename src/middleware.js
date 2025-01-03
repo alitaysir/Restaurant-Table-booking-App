@@ -1,29 +1,25 @@
-import { NextResponse } from 'next/server'
- 
-// This function can be marked `async` if using `await` inside
+import { NextResponse } from "next/server";
+
 export function middleware(request) {
-//   return NextResponse.redirect(new URL('/home', request.url))
-    const path= request.nextUrl.pathname
+  const path = request.nextUrl.pathname;
 
-    const isPublic= path==="/login" || path==="/signup"
-    const token= request.cookies.get("token")?.value || ""
+  // Define public paths
+  const isPublic = path === "/login" || path === "/signup";
+  const token = request.cookies.get("token")?.value || "";
 
-    if(!isPublic && !token){
-        return NextResponse.redirect(new URL("/login", request.nextUrl))
-    }
+  // Redirect if no token and accessing private routes
+  if (!isPublic && !token) {
+    return NextResponse.redirect(new URL("/login", request.url));
+  }
 
-    if(isPublic && token){
-        return NextResponse.redirect(new URL("/", request.nextUrl))
-    }
+  // Redirect logged-in users from public routes
+  if (isPublic && token) {
+    return NextResponse.redirect(new URL("/", request.url));
+  }
+
+  return NextResponse.next();
 }
- 
-// See "Matching Paths" below to learn more
+
 export const config = {
-  matcher: [
-    "/",
-    "/login",
-    "/signup",
-    "/mybookings",
-    `/table/:id*`
-  ]
-}
+  matcher: ["/", "/login", "/signup", "/mybookings", "/table/:id*"],
+};
