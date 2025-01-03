@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Restaurant Table Booking App
 
-## Getting Started
+This is a full-stack web application that allows users to book tables at restaurants. The application is built using Next.js for the frontend, Node.js for the backend, and MongoDB for the database.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- User authentication (Signup/Login)
+- Book tables for specific dates and times
+- View available slots for table booking
+- Manage booked slots
+- Responsive design for a seamless experience on different devices
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Frontend:
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Backend:
+- **Server**: Node.js with API routes
+- **Database**: MongoDB
 
-## Learn More
+### Other Tools:
+- [Axios](https://axios-http.com/) for API calls
+- [React Hot Toast](https://react-hot-toast.com/) for notifications
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/alitaysir/Restaurant-Table-booking-App.git
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. Navigate to the project directory:
+   ```bash
+   cd Restaurant-Table-booking-App
+   ```
 
-## Deploy on Vercel
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Set up your environment variables:
+   - Create a `.env` file in the root directory.
+   - Add the following variables:
+     ```env
+     MONGODB_URI=<your-mongodb-connection-string>
+     JWT_SECRET=<your-jwt-secret>
+     ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+6. Open the application in your browser:
+   ```
+   http://localhost:3000
+   ```
