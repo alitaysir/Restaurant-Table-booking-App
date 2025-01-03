@@ -58,3 +58,14 @@ This is a full-stack web application that allows users to book tables at restaur
    ```
    http://localhost:3000
    ```
+
+## Images
+- **Home Page**: ![Screenshot 2025-01-03 234020](https://github.com/user-attachments/assets/8e437237-6143-42fb-9f29-b07f6cb5d5d6)
+
+- **Booking Page**: ![Screenshot 2025-01-03 234052](https://github.com/user-attachments/assets/3ce1784c-ad04-4ae4-92d5-47c487c994ad)
+
+- **Booking Page( Booked time slot in non clickable and light in color )**: ![Screenshot 2025-01-03 234209](https://github.com/user-attachments/assets/1590e392-1f6b-4562-a7b8-173ca7b9c9c0)
+
+- - **Manage Bookings Page( User also have the option to delete a booking )**:![Screenshot 2025-01-03 234231](https://github.com/user-attachments/assets/c1c48aa1-1791-40d0-9ac8-cd76b9f9c9fb)
+
+
