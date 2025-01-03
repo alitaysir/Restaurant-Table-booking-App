@@ -44,28 +44,28 @@ const BookingPage = ({ params }) => {
     }));
   };
 
-  const fetchAvailableSlots = async() => {
-    try {
-      const response = await axios.post("/api/booking/available-slots", {
-        restaurantId: cid,
-        date: bookingDetails.date,
-      });
-      if (response.data.success) {
-        setbookedslots(response.data.slots);
-      } else {
-        toast.error("Error fetching booked time slots");
-      }
-    } catch (error) {
-      console.error("Error fetching booked slots:", error);
-      toast.error("Error fetching booked slots");
+  const fetchAvailableSlots = useCallback(async () => {
+  try {
+    const response = await axios.post(`${API_BASE_URL}/booking/available-slots`, {
+      restaurantId: cid,
+      date: bookingDetails.date,
+    });
+    if (response.data.success) {
+      setbookedslots(response.data.slots);
+    } else {
+      toast.error("Error fetching booked time slots");
     }
-};
+  } catch (error) {
+    console.error("Error fetching booked slots:", error);
+    toast.error("Error fetching booked slots");
+  }
+}, [cid, bookingDetails.date, API_BASE_URL]);
 
-  useEffect(() => {
-    if (bookingDetails.date) {
-      fetchAvailableSlots();
-    }
-  }, [bookingDetails.date,fetchAvailableSlots]);
+useEffect(() => {
+  if (bookingDetails.date) {
+    fetchAvailableSlots();
+  }
+}, [bookingDetails.date, fetchAvailableSlots]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
