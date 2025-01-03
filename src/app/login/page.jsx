@@ -60,7 +60,7 @@ export default function LoginPage() {
             Login
           </button>
           <span>
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link href="/signup" className="text-blue-500">
               Signup
             </Link>
