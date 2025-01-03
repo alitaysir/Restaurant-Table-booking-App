@@ -46,7 +46,7 @@ const BookingPage = ({ params }) => {
 
   const fetchAvailableSlots = useCallback(async () => {
   try {
-    const response = await axios.post(`${API_BASE_URL}/booking/available-slots`, {
+    const response = await axios.post(`/api/booking/available-slots`, {
       restaurantId: cid,
       date: bookingDetails.date,
     });
@@ -59,7 +59,7 @@ const BookingPage = ({ params }) => {
     console.error("Error fetching booked slots:", error);
     toast.error("Error fetching booked slots");
   }
-}, [cid, bookingDetails.date, API_BASE_URL]);
+}, [cid, bookingDetails.date]);
 
 useEffect(() => {
   if (bookingDetails.date) {
