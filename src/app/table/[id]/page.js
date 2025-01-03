@@ -44,7 +44,7 @@ const BookingPage = ({ params }) => {
     }));
   };
 
-  const fetchAvailableSlots = async useCallback(() => {
+  const fetchAvailableSlots = async() => {
     try {
       const response = await axios.post("/api/booking/available-slots", {
         restaurantId: cid,
@@ -59,7 +59,7 @@ const BookingPage = ({ params }) => {
       console.error("Error fetching booked slots:", error);
       toast.error("Error fetching booked slots");
     }
-}, []);
+};
 
   useEffect(() => {
     if (bookingDetails.date) {
