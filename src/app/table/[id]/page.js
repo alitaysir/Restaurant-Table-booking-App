@@ -65,7 +65,7 @@ const BookingPage = ({ params }) => {
     if (bookingDetails.date) {
       fetchAvailableSlots();
     }
-  }, [bookingDetails.date, fetchAvailableSlots]);
+  }, [bookingDetails.date]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -141,10 +141,9 @@ const BookingPage = ({ params }) => {
               Time Slot Available
             </label>
             <div className="grid grid-cols-5 gap-2">
-              {timeSlots.map((slot,index) => (
+              {timeSlots.map((slot) => (
                 bookedslots.includes(slot) ? (
                   <button
-                    key={index}
                     disabled
                     className="px-4 py-2 rounded-lg border bg-gray-100 text-gray-400"
                   >
@@ -152,7 +151,7 @@ const BookingPage = ({ params }) => {
                   </button>
                 ) : (
                   <button
-                    key={index}
+                    key={slot}
                     type="button"
                     className={`px-4 py-2 rounded-lg border ${
                       bookingDetails.timeSlot === slot
