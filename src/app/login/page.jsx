@@ -52,7 +52,9 @@ export default function LoginPage(){
                 />
                 <div className="flex flex-col items-center justify-center gap-1">
                 <button className="bg-blue-500 text-white px-5 py-2 rounded" onClick={handledata}>Login</button>
-                <span>Don't have an account? <Link href={"/signup"} className="text-blue-500">Signup</Link></span>
+                <span>Don&apos;t have an account?
+                     <Link href={"/signup"} className="text-blue-500">Signup</Link>
+                </span>
                 </div>
             </form>
 
