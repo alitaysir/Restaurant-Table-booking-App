@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import connectDB from "@/dbConfig/db";
 import { getDataFromToken } from "@/helpers/getDataFromToken";
 import userModel from "@/models/userModel";
